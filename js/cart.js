@@ -2,13 +2,12 @@
 vm = new Vue({
 	el:".container",
 	data:{
-		title:'hello vue',
-		productList:[],
+		productList:[]
 	},
 	filters:{
 		formatMoney:function(val){
-            return "￥" + val.toFixed(2);
-        }
+			return '￥' + val.toFixed(2);
+		}
 	},
 	mounted:function(){
 		this.cartView();
@@ -19,6 +18,6 @@ vm = new Vue({
 			this.$http.get('data/cart.json',{'id':1}).then(function(res){
 				_this.productList = res.body.result.productList;
 			});
-		},
-	},
+		}
+	}
 });

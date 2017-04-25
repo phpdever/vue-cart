@@ -5,8 +5,8 @@ vm = new Vue({
 		productList:[]
 	},
 	filters:{
-		formatMoney:function(val){
-			return '￥' + val.toFixed(2);
+		formatMoney:function(val,type){
+			return '￥' + val.toFixed(2) + type;
 		}
 	},
 	mounted:function(){

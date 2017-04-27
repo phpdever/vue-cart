@@ -2,7 +2,8 @@
 vm = new Vue({
 	el:".container",
 	data:{
-		productList:[]
+		productList:[],
+		checkAllFlag:false
 	},
 	filters:{
 		formatMoney:function(val,type){
@@ -37,6 +38,18 @@ vm = new Vue({
 			}else{
 				item.checked = !item.checked;
 			}
+		},
+		//全选商品列表
+		checkAll:function(flag){
+			this.checkAllFlag = flag;
+			var _this = this;
+			this.productList.forEach(function(item,index){
+			    if(typeof item.checked == 'undefined'){
+			      _this.$set(item,'checked',_this.checkAllFlag);
+			    }else{
+			      item.checked = _this.checkAllFlag;
+			    }
+			});
 		}
 	}
 });

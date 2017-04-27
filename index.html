@@ -98,14 +98,14 @@
                 <div class="cart-foot-l">
                     <div class="item-all-check">
                         <a href="javascipt:;">
-                            <span class="item-check-btn">
+                            <span class="item-check-btn" v-bind:class="{'check':checkAllFlag}" @click="checkAll(true)">
                                 <svg class="icon icon-ok"></svg>
                             </span>
                             <span>全选</span>
                         </a>
                     </div>
                     <div class="item-all-del">
-                        <a href="javascipt:;" class="item-del-btn">
+                        <a href="javascipt:;" class="item-del-btn" @click="checkAll(false)">
                             取消全选
                         </a>
                     </div>

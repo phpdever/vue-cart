@@ -15,7 +15,7 @@ vm = new Vue({
 	},
 	methods:{
 		cartView:function(){
-			var _this = this;
+			var _this = this; //解决作用域的问题
 			this.$http.get('data/cart.json',{'id':1}).then(function(res){
 				_this.productList = res.body.result.productList;
 			});
